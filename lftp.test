@@ -1,0 +1,1 @@
+test lftpjavascript:document.forms['EditForm'].screen.value=3;  document.forms['EditForm'].submit();
