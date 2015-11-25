@@ -396,7 +396,7 @@ abstract class Ai1wm_Import_Abstract {
 		}
 
 		// Resolve domain
-		$url      = admin_url( 'admin-ajax.php?action=ai1wm_import&' . http_build_query( $this->args ) );
+		$url      = add_query_arg( $this->args, admin_url( 'admin-ajax.php?action=ai1wm_import' ) );
 		$hostname = parse_url( $url, PHP_URL_HOST );
 		$port     = parse_url( $url, PHP_URL_PORT );
 		$ip       = gethostbyname( $hostname );
