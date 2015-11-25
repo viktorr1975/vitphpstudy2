@@ -103,14 +103,6 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
-define('WP_TEMP_DIR', '/opt/bitnami/apps/wordpress/tmp');
+/*define('WP_TEMP_DIR', '/opt/bitnami/apps/wordpress/tmp');*/
 
-
-/*define('FS_METHOD', 'ftpext');*/
 define('FS_METHOD', 'direct');
-define('FTP_BASE', '/opt/bitnami/apps/wordpress/htdocs/');
-define('FTP_USER', 'bitnamiftp');
-/*define('FTP_PASS', 'bitnamiftp');*/
-define('FTP_HOST', '127.0.0.1');
-define('FTP_SSL', false);
-
