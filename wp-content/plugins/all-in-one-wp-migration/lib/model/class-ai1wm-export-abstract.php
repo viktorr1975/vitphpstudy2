@@ -401,7 +401,11 @@ abstract class Ai1wm_Export_Abstract {
 		}
 
 		// Resolve domain
+<<<<<<< HEAD
 		$url      = add_query_arg( $this->args, admin_url( 'admin-ajax.php?action=ai1wm_export' ) );
+=======
+		$url      = add_query_arg( urlencode_deep( $this->args ), admin_url( 'admin-ajax.php?action=ai1wm_export' ) );
+>>>>>>> 0dcb1e6678f930782c89a644ea22e4765c750e9f
 		$hostname = parse_url( $url, PHP_URL_HOST );
 		$port     = parse_url( $url, PHP_URL_PORT );
 		$ip       = gethostbyname( $hostname );
