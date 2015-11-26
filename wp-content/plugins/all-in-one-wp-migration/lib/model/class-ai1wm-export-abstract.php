@@ -80,18 +80,12 @@ abstract class Ai1wm_Export_Abstract {
 
 		// Default filters
 		$filters = array(
-			'ai1wm-backups',
-			'managewp',
-		);
-
-		// Exclude index.php
-		$filters = array_merge( $filters, array(
 			'index.php',
+			'ai1wm-backups',
 			'themes' . DIRECTORY_SEPARATOR . 'index.php',
 			'plugins' . DIRECTORY_SEPARATOR . 'index.php',
 			'uploads' . DIRECTORY_SEPARATOR . 'index.php',
-		) );
-
+		);
 
 		// Exclude media
 		if ( $this->should_exclude_media() ) {
@@ -407,7 +401,7 @@ abstract class Ai1wm_Export_Abstract {
 		}
 
 		// Resolve domain
-		$url      = admin_url( 'admin-ajax.php?action=ai1wm_export&' . http_build_query( $this->args ) );
+		$url      = add_query_arg( urlencode_deep( $this->args ), admin_url( 'admin-ajax.php?action=ai1wm_export' ) );
 		$hostname = parse_url( $url, PHP_URL_HOST );
 		$port     = parse_url( $url, PHP_URL_PORT );
 		$ip       = gethostbyname( $hostname );

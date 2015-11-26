@@ -5,7 +5,7 @@
  * Description: Migration tool for all your blog data. Import or Export your blog content with a single click.
  * Author: ServMask
  * Author URI: https://servmask.com/
- * Version: 4.9
+ * Version: 4.12
  * Text Domain: all-in-one-wp-migration
  * Domain Path: /languages
  * Network: True
@@ -32,11 +32,13 @@
  * ███████║███████╗██║  ██║ ╚████╔╝ ██║ ╚═╝ ██║██║  ██║███████║██║  ██╗
  * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
  */
+
+@ignore_user_abort( true );
 @set_time_limit( 0 );
 @ini_set( 'max_input_time', '-1' );
 
 // Plugin Basename
-define( 'AI1WM_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+define( 'AI1WM_PLUGIN_BASENAME',  basename( dirname( __FILE__ ) ) . '/' . basename( __FILE__ ) );
 
 // Plugin Path
 define( 'AI1WM_PATH', dirname( __FILE__ ) );
@@ -53,10 +55,10 @@ define( 'AI1WM_BACKUPS_URL', content_url( 'ai1wm-backups', __FILE__ ) );
 // Themes Absolute Path
 define( 'AI1WM_THEMES_PATH', get_theme_root() );
 
-// include constants
+// Include constants
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'constants.php';
 
-// include loader
+// Include loader
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'loader.php';
 
 // ==========================================================================
