@@ -23,26 +23,45 @@
  * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
  */
 
-// Include plugin bootstrap file
-require_once dirname( __FILE__ ) .
-	DIRECTORY_SEPARATOR .
-	'all-in-one-wp-migration.php';
+class Ai1wm_Resolve_Controller {
 
-/**
- * Trigger Uninstall process only if WP_UNINSTALL_PLUGIN is defined
- */
-if ( defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	global $wpdb, $wp_filesystem;
+	public static function resolve( $args = array() ) {
 
-	// Delete any options or other data stored in the database here
-	delete_site_option( AI1WM_EXPORT_OPTIONS );
-	delete_site_option( AI1WM_ERROR_HANDLER );
-	delete_site_option( AI1WM_EXCEPTION_HANDLER );
-	delete_site_option( AI1WM_MAINTENANCE_MODE );
-	delete_site_option( AI1WM_URL_IP );
-	delete_site_option( AI1WM_URL_TRANSPORT );
-	delete_site_option( AI1WM_SECRET_KEY );
-	delete_site_option( AI1WM_AUTH_USER );
-	delete_site_option( AI1WM_AUTH_PASSWORD );
-	delete_site_option( AI1WM_MESSAGES );
+		// Set arguments
+		if ( empty( $args ) ) {
+			$args = ai1wm_urldecode( $_REQUEST );
+		}
+
+		// Set secret key
+		$secret_key = null;
+		if ( isset( $args['secret_key'] ) ) {
+			$secret_key = $args['secret_key'];
+		}
+
+		// Verify secret key by using the value in the database, not in cache
+		if ( $secret_key !== get_site_option( AI1WM_SECRET_KEY, false, false ) ) {
+			Ai1wm_Status::set(
+				array(
+					'type'    => 'error',
+					'title'   => __( "Unable to resolve", AI1WM_PLUGIN_NAME ),
+					'message' => __( "Unable to authenticate your request with secret_key = \"{$secret_key}\"", AI1WM_PLUGIN_NAME ),
+				)
+			);
+			exit;
+		}
+
+		// Set IP address
+		if ( isset( $args['url_ip'] ) && ( $ip = $args['url_ip' ] ) ) {
+			update_site_option( AI1WM_URL_IP, $ip );
+		}
+
+		// Set transport layer
+		if ( isset( $args['url_transport'] ) && ( $transport = $args['url_transport'] ) ) {
+			if ( $transport === 'curl' ) {
+				update_site_option( AI1WM_URL_TRANSPORT, array( 'curl', 'ai1wm' ) );
+			} else {
+				update_site_option( AI1WM_URL_TRANSPORT, array( 'ai1wm', 'curl' ) );
+			}
+		}
+	}
 }

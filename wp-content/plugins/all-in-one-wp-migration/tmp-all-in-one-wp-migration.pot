@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the All-in-One WP Migration package.
 msgid ""
 msgstr ""
-"Project-Id-Version: All-in-One WP Migration 4.11\n"
+"Project-Id-Version: All-in-One WP Migration 4.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/all-in-one-wp-"
 "migration\n"
-"POT-Creation-Date: 2015-11-12 17:50:43+00:00\n"
+"POT-Creation-Date: 2015-11-26 22:03:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,20 +48,24 @@ msgstr ""
 msgid "<a href=\"https://servmask.com/help\" target=\"_blank\">Get Support</a>"
 msgstr ""
 
-#: lib/controller/class-ai1wm-main-controller.php:386
-#: lib/controller/class-ai1wm-main-controller.php:387
+#: lib/controller/class-ai1wm-main-controller.php:390
+#: lib/controller/class-ai1wm-main-controller.php:391
 msgid "Export"
 msgstr ""
 
-#: lib/controller/class-ai1wm-main-controller.php:399
-#: lib/controller/class-ai1wm-main-controller.php:400
+#: lib/controller/class-ai1wm-main-controller.php:403
+#: lib/controller/class-ai1wm-main-controller.php:404
 msgid "Import"
 msgstr ""
 
-#: lib/controller/class-ai1wm-main-controller.php:412
-#: lib/controller/class-ai1wm-main-controller.php:413
+#: lib/controller/class-ai1wm-main-controller.php:416
+#: lib/controller/class-ai1wm-main-controller.php:417
 #: lib/view/backup/index.php:33
 msgid "Backups"
+msgstr ""
+
+#: lib/controller/class-ai1wm-resolve-controller.php:46
+msgid "Unable to resolve"
 msgstr ""
 
 #: lib/exception/class-ai1wm-import-exception.php:62
@@ -76,33 +80,33 @@ msgstr ""
 msgid "Unable to delete <strong>\"%s\"</strong> file."
 msgstr ""
 
-#: lib/model/class-ai1wm-export-abstract.php:47
+#: lib/model/class-ai1wm-export-abstract.php:52
 msgid "Creating an empty archive..."
 msgstr ""
 
-#: lib/model/class-ai1wm-export-abstract.php:63
+#: lib/model/class-ai1wm-export-abstract.php:68
 msgid "Done creating an empty archive."
 msgstr ""
 
-#: lib/model/class-ai1wm-export-abstract.php:78
-#: lib/model/class-ai1wm-import-abstract.php:143
+#: lib/model/class-ai1wm-export-abstract.php:83
+#: lib/model/class-ai1wm-import-abstract.php:148
 msgid "Retrieving a list of all WordPress files..."
 msgstr ""
 
-#: lib/model/class-ai1wm-export-abstract.php:147
-#: lib/model/class-ai1wm-import-abstract.php:162
+#: lib/model/class-ai1wm-export-abstract.php:152
+#: lib/model/class-ai1wm-import-abstract.php:167
 msgid "Done retrieving a list of all WordPress files."
 msgstr ""
 
-#: lib/model/class-ai1wm-export-abstract.php:169
+#: lib/model/class-ai1wm-export-abstract.php:174
 msgid "Archiving %d files...<br />%d%% complete"
 msgstr ""
 
-#: lib/model/class-ai1wm-export-abstract.php:242
+#: lib/model/class-ai1wm-export-abstract.php:247
 msgid "Exporting database..."
 msgstr ""
 
-#: lib/model/class-ai1wm-export-abstract.php:256
+#: lib/model/class-ai1wm-export-abstract.php:261
 msgid "Done exporting database."
 msgstr ""
 
@@ -110,32 +114,32 @@ msgstr ""
 msgid "Renaming exported file..."
 msgstr ""
 
-#: lib/model/class-ai1wm-import-abstract.php:47
+#: lib/model/class-ai1wm-import-abstract.php:52
 msgid "Unpacking archive..."
 msgstr ""
 
-#: lib/model/class-ai1wm-import-abstract.php:73
+#: lib/model/class-ai1wm-import-abstract.php:78
 msgid "Invalid package.json file."
 msgstr ""
 
-#: lib/model/class-ai1wm-import-abstract.php:78
+#: lib/model/class-ai1wm-import-abstract.php:83
 msgid ""
 "Invalid archive file. It should contain <strong>package.json</strong> file."
 msgstr ""
 
-#: lib/model/class-ai1wm-import-abstract.php:95
+#: lib/model/class-ai1wm-import-abstract.php:100
 msgid "Unable to get the file size of <strong>\"%s\"</strong>"
 msgstr ""
 
-#: lib/model/class-ai1wm-import-abstract.php:196
+#: lib/model/class-ai1wm-import-abstract.php:201
 msgid "Restoring %d files...<br />%d%% complete"
 msgstr ""
 
-#: lib/model/class-ai1wm-import-abstract.php:266
+#: lib/model/class-ai1wm-import-abstract.php:271
 msgid "Restoring database..."
 msgstr ""
 
-#: lib/model/class-ai1wm-import-abstract.php:286
+#: lib/model/class-ai1wm-import-abstract.php:291
 msgid "Your data has been imported successfuly!"
 msgstr ""
 
@@ -181,6 +185,18 @@ msgstr ""
 
 #: lib/model/class-ai1wm-status.php:134
 msgid "Unable to write <strong>\"%s\"</strong> in <strong>\"%s\"</strong>."
+msgstr ""
+
+#: lib/model/class-ai1wm-streams.php:161 lib/model/class-ai1wm-streams.php:169
+msgid "The SSL certificate for the host could not be verified."
+msgstr ""
+
+#: lib/model/class-ai1wm-streams.php:234
+msgid "Could not open handle for fopen() to %s"
+msgstr ""
+
+#: lib/model/class-ai1wm-streams.php:262
+msgid "Failed to write request to temporary file."
 msgstr ""
 
 #: lib/vendor/servmask/archiver/class-ai1wm-archiver.php:158
@@ -494,9 +510,9 @@ msgstr ""
 msgid "All-in-One WP Migration"
 msgstr ""
 
-#. #-#-#-#-#  tmp-all-in-one-wp-migration.pot (All-in-One WP Migration 4.11)  #-#-#-#-#
+#. #-#-#-#-#  tmp-all-in-one-wp-migration.pot (All-in-One WP Migration 4.13)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tmp-all-in-one-wp-migration.pot (All-in-One WP Migration 4.11)  #-#-#-#-#
+#. #-#-#-#-#  tmp-all-in-one-wp-migration.pot (All-in-One WP Migration 4.13)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://servmask.com/"
 msgstr ""

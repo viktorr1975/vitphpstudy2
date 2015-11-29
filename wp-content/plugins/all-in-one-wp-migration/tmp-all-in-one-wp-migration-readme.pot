@@ -150,6 +150,14 @@ msgid "Configure the plugin by going to the <code>Site Migration</code> menu tha
 msgstr ""
 
 #. Found in changelog list item.
+msgid "Add new mechanism for resolving HTTP requests"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix an issue with Google Drive extension"
+msgstr ""
+
+#. Found in changelog list item.
 msgid "Fix content filters on export"
 msgstr ""
 

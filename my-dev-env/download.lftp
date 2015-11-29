@@ -1,0 +1,9 @@
+#--exclude .c9/ service files from https://ide.c9.io/viktorr1975/vitphpstudy2
+#--exclude ~ service file from https://ide.c9.io/viktorr1975/vitphpstudy2
+#-e	delete   files   not  present  at remote site
+#-n	download  only  newer  files
+#-p	don't set file permissions
+#-v	verbose operation level 1
+open  -u u635824124,viktorr1975 31.220.16.203
+mirror -enpv --exclude .git/ --exclude .c9/ --exclude ~ --exclude wp-config.php ~  ~/vitphpstudy2 
+exit
